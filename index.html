@@ -39,36 +39,89 @@
             padding-bottom: 2%;
         }
         .communicate {
-            width: 8%;
-            height: 3%;
-            padding-top: 5%;
-            margin-bottom: 5%;
+            width: auto; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
+            padding: 10px 20px; /* Add padding to increase button size */
+            border-radius: 5px; /* Round the corners of the buttons */
+            background-color: orange; /* Change background color to orange for theme */
+            border: none; /* Remove border */
+            font-size: 1em; /* Adjust font size as needed */
+            color: white; /* Set text color to white for contrast against orange background */
         }
-    
+
+        .communicate:hover {
+            background-color: darkorange; /* Darken button on hover for interactive effect */
+        }
+
+        /* Add the following styles */
+
+        /* This is the container for all the buttons */
+        .button-container {
+            position: fixed; /* Position it relative to the viewport */
+            top: 10px; /* Place it at the top */
+            right: 10px; /* Place it at the right */
+            display: none; /* Hide it by default */
+        }
+
+        /* This is the round button that will toggle the visibility of the other buttons */
+        .round-button {
+            width: 50px; /* Set the width */
+            height: 50px; /* Set the height */
+            border-radius: 50%; /* Make it circular */
+            padding: 10px; /* Add some padding */
+            background-color: #4CAF50; /* Set the background color */
+            border: 2px solid white; /* Add a white border */
+            box-shadow: 0 0 5px gray; /* Add a gray shadow */
+            cursor: pointer; /* Change the cursor to a pointer */
+        }
+
+        /* This is the class that will be added or removed to the button container when the round button is clicked */
+        .show {
+            display: block; /* Show the container */
+            visibility: visible; /* Make it visible */
+        }
     </style>
 </head>
 <body>
 
     <h1>PURPLE HAND GANG</h1>
     <p>This is a special website created for the members of the Purple Hand Gang🟣.</p>
+    <p>Lord Rama 🙏 Homecoming 🌎 Guys!!🔥🔥</p>
     <img src="https://ih1.redbubble.net/image.3177790902.3053/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Description of image" width="180" height="180">
-    <img class="newYearImage" src="https://www.eventstodayz.com/wp-content/uploads/2023/08/happy-new-year-2024-gif-animation.gif" alt="Happy New Year 2024">
+    <img class="newYearImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM3OMrLiv3P3OvbC-kSJ0Xhh3IW09fvDJjQA&usqp=CAU" alt="Happy New Year 2024">
 
-    <button onclick="location.href='https://brie.fi/ng/lustrous-book-6#lustrous-book-6';" style="background-color: black; color: white;" class="communicate">Communicate!</button>
-    <button onclick="location.href='https://sanket3yoprogrammer.github.io/gamingVhai/app.html';" style="background-color: black; color: white;" class="communicate">Game Zone</button>
-    <button onclick="location.href='https://www.whiteboard.team/app/board/Q6MUB05hmB_qg7_GIs5E25DtI';" style="background-color: black; color: white;" class="communicate">Planboard</button>
-    <button onclick="location.href='https://sanket3yoprogrammer.github.io/playmusiclistVhai/';" style="background-color: black; color: white;" class="communicate">Music</button>
-    <button onclick="location.href='https://www.youtube.com/';" style="background-color: black; color: white;" class="communicate">Something on youtube?</button>
+    <!-- Wrap all the buttons inside a div element with a class name of button-container -->
+    <div class="button-container">
+        <!-- Create another div element with a class name of round-button and place it inside the button-container element -->
+        <div class="round-button"></div>
+        <button onclick="location.href='https://brie.fi/ng/lustrous-book-6#lustrous-book-6';" class="communicate">Communicate!</button>
+        <button onclick="location.href='https://sanket3yoprogrammer.github.io/gamingVhai/app.html';" class="communicate">Game Zone</button>
+        <button onclick="location.href='https://www.whiteboard.team/app/board/Q6MUB05hmB_qg7_GIs5E25DtI';" class="communicate">Planboard</button>
+        <button onclick="location.href='https://sanket3yoprogrammer.github.io/playmusiclistVhai/';" class="communicate">Music</button>
+        <button onclick="location.href='https://www.youtube.com/';" class="communicate">Something on youtube?</button>
+    </div>
     <p>
         Credits: sanket3yoprogrammer😎
         YO YO YO WASSUP GUYS MAJE KAROO🔥 
 
-        DISCLAIMER: Study Pressure is injurious to Health📖
-        
         MUTUAL FUNDS: SAHI HAI!! 🧬🟢
     </p>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="client.js"></script>
+
+    <!-- Add the following script -->
+
+    <script>
+        // Select the round button element
+        var roundButton = document.querySelector(".round-button");
+        // Select the button container element
+        var buttonContainer = document.querySelector(".button-container");
+        // Add a click event listener to the round button
+        roundButton.addEventListener("click", function() {
+            // Toggle the show class to the button container
+            buttonContainer.classList.toggle("show");
+        });
+    </script>
 </body>
 </html>
